@@ -1,0 +1,89 @@
+$content-center:center;
+$h_background-color: #d8d8d8;
+$h_padding: 10px 33px;
+$topnav-float:left;
+$topnav_overflow:hidden;
+$topnav_bg:#333;
+$topnav_a_color:#ccbebe;
+$topnav_a_padd:14px 16px;
+$topnav_dec:none;
+$topnav_a_size:17px;
+$bg_tabs:#CCC;
+$tabs_radius:4px 0 0 4px;
+$border_right:1px solid gray;
+$width_tab:100%;
+$tab-margin: 0.2em 0;
+$tab-border-width: 1px 0 1px 1px;
+$tab-border-radius: 4px 0 0 4px;
+$tab-overflow:hidden;
+$tab-position:relative;
+$tab_right:-2px;
+$tab_index:2;
+$tab_display:block;
+$cursor_pt:pointer;
+$active_margin-bottom: 0.2em;
+$active_padding-bottom: 0;
+$active_border-right: 1px solid white;
+$tab_vertical:-1px;
+.header {
+    background-color: $h_background-color;
+    padding: $h_padding;
+}
+
+.topnav {
+    overflow: $topnav_overflow;
+    background-color: $topnav_bg;
+}
+
+.topnav a {
+    float: $topnav-float;
+    color: $topnav_a_color;
+    text-align: $content-center;
+    padding: $topnav_a_padd;
+    text-decoration: $topnav_dec;
+    font-size: $topnav_a_size;
+}
+
+.ui-tabs.ui-tabs-vertical .ui-tabs-nav {
+    float: $topnav-float;
+    width: $tabs_width;
+    background: $bg_tabs;
+    border-radius: $tabs_radius;
+    border-right: $border_right;
+}
+
+.ui-tabs.ui-tabs-vertical .ui-tabs-nav li {
+    clear: $topnav-float;
+    width: $width_tab;
+    margin: $tab-margin;
+    border: $border_right;
+    border-width: $tab-border-width;
+    border-radius: $tab-border-radius;
+    overflow: $tab-overflow;
+    position: $tab-position;
+    right: $tab_right;
+    z-index: $tab_index;
+}
+
+.ui-tabs.ui-tabs-vertical .ui-tabs-nav li a {
+    display: $tab_display;
+    width: $width_tab;
+}
+
+.ui-tabs.ui-tabs-vertical .ui-tabs-nav li a:hover {
+    cursor: $cursor_pt;
+}
+
+.ui-tabs.ui-tabs-vertical .ui-tabs-nav li.ui-tabs-active {
+    margin-bottom: $active_margin-bottom;
+    padding-bottom: $active_padding-bottom;
+    border-right: $active_border-right;
+}
+
+.ui-tabs.ui-tabs-vertical .ui-tabs-panel {
+    float: $topnav-float;
+    border-left: $border_right;
+    border-radius: $active_padding-bottom;
+    position: $tab-position;
+    left: $tab_vertical;
+}

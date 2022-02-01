@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Workshop1 </title>
+    <!-- <link rel="stylesheet" href="../css/index.css"> -->
+    <!-- <link rel="stylesheet" href="../form.js"> -->
+    <style>
+        .header {
+            background-color: #110658;
+            /* width: 100%; */
+            /* height: 60px; */
+            padding: 15px;
+        }
+        
+        .header h1 {
+            text-align: center;
+            color: #fff;
+        }
+        
+        .footer {
+            background-color: #110658;
+            /* width: 100%; */
+            /* height: 60px; */
+            padding: 5px;
+        }
+        
+        * {
+            box-sizing: border-box
+        }
+        
+        .tab {
+            float: left;
+            border: 1px solid #ccc;
+            background-color: #f1f1f1;
+            width: 30%;
+            height: 300px;
+        }
+        
+        .tab button {
+            display: block;
+            background-color: inherit;
+            color: black;
+            padding: 22px 16px;
+            width: 100%;
+            border: none;
+            outline: none;
+            text-align: left;
+            cursor: pointer;
+            transition: 0.3s;
+            font-size: 17px;
+        }
+        
+        .tab button:hover {
+            background-color: #ddd;
+        }
+        
+        .tab button.active {
+            background-color: #110658;
+            color: #fff;
+        }
+        
+        .tabcontent {
+            float: left;
+            padding: 0px 12px;
+            border: 1px solid #ccc;
+            width: 30%;
+            border-left: none;
+            height: 300px;
+        }
+        
+        input.button {
+            background-color: #110658;
+            color: #fff;
+        }
+        
+        #tables td,
+        #tables th {
+            border: 1px solid #ddd;
+            padding: 1px;
+        }
+        
+        #tables tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        
+        #tables tr:hover {
+            background-color: #ddd;
+        }
+        
+        #tables th {
+            padding-top: 1px;
+            padding-bottom: 1px;
+            text-align: left;
+            background-color: #221285;
+            color: white;
+        }
+        
+        .img img {
+            width: 40%;
+            /* margin-bottom: 13%; */
+            height: 300px;
+        }
+        
+        .footer h4 {
+            color: #fff;
+            text-align: center;
+        }
+    </style>
+    <!-- <script type="text/javascript">
+  
+    </script> -->
+</head>
+
+<body>
+
+    <div class="header">
+        <h1>Cybage Academic Library</h1>
+    </div>
+    <div>
+        <div class="tab">
+            <button class="tablinks" onclick="openCity(event, 'AddBook')" id="defaultOpen">Add Book</button>
+            <button class="tablinks" onclick="openCity(event, 'RemoveBook')">Remove Book</button>
+            <button class="tablinks" onclick="openCity(event, 'EditBook')">Edit Book</button>
+            <button class="tablinks" onclick="openCity(event, 'ListOfAllBook')">List Of All Books</button>
+        </div>
+
+        <div id="AddBook" class="tabcontent">
+            <h2>Add Book</h2>
+            <div>
+                <form>
+                    <!-- <form id="productTable"> -->
+                    <label for="bid">Book Id</label><br>
+                    <input type="text" class="bid" name="bid"><br>
+                    <label for="bname">Book Name</label><br>
+                    <input class="bname" type="text" name="bname"><br>
+                    <label for="aname">Author Name</label><br>
+                    <input class="aname" type="text" name="aname"><br>
+                    <label for="aname">Date:</label><br>
+                    <input type="date" class="date" name="date" value="2022-01-01" min="2022-01-01" max="2022-01-31"><br><br>
+                    <input class="button" type="submit" value="Add Book">
+                    <!-- <input class="button" id="updateButton" type="submit" value="Add Book" onclick="productUpdate();"> -->
+
+
+                </form>
+            </div>
+        </div>
+
+        <div id="RemoveBook" class="tabcontent">
+            <h2>Remove Book</h2>
+            <div>
+                <form id="productTable">
+                    <label for="bid">Book Id</label><br>
+                    <input type="text" id="bid" name="bid"><br>
+                    <label for="bname">Book Name</label><br>
+                    <input type="text" id="bname" name="bname"><br>
+                    <label for="aname">Author name:</label><br>
+                    <input type="text" id="aname" name="aname"><br>
+                    <label for="aname">Date:</label><br>
+                    <input type="date" name="date" value="2022-01-01" min="2022-01-01" max="2022-01-31"><br><br>
+                    <input class="button" type="submit" value="Remove Book">
+                </form>
+            </div>
+
+        </div>
+
+        <div id="EditBook" class="tabcontent">
+            <h2>Edit Book</h2>
+            <div>
+                <form>
+                    <label for="bid">Book Id</label><br>
+                    <input type="text" id="bid" name="bid"><br>
+                    <label for="bname">Book Name</label><br>
+                    <input type="text" id="bname" name="bname"><br>
+                    <label for="aname">Author name:</label><br>
+                    <input type="text" id="aname" name="aname"><br>
+                    <label for="aname">Date:</label><br>
+                    <input type="date" name="date" value="2022-01-01" min="2022-01-01" max="2022-01-31"><br><br>
+                    <input class="button" type="submit" value="Edit Book">
+                </form>
+            </div>
+        </div>
+        <div id="ListOfAllBook" class="tabcontent">
+            <h2>List Of All Books</h2>
+            <table id="tables">
+                <tr>
+                    <th>Book Id</th>
+                    <th>Book Name</th>
+                    <th>Author name</th>
+                    <th>Date</th>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>War and Peace</td>
+                    <td>Tolstoy</td>
+                    <td>1 Jan 2022</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Shadow of Ladakh</td>
+                    <td>B. Bhattacharia</td>
+                    <td>5 Jan 2022</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Adventures of Sherlock Homes</td>
+                    <td>Arther Canon Doel</td>
+                    <td>6 Jan 2022</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>Apple Carte</td>
+                    <td>G. B. Shaw</td>
+                    <td>11 Jan 2022</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <div class="img">
+        <img src="img/book.jfif">
+    </div>
+    <div class="footer">
+        <h4>Cybage Software Pvt. Ltd.</h4>
+    </div>
+
+    <script type="text/javascript">
+        function openCity(evt, bname) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tabcontent");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+            tablinks = document.getElementsByClassName("tablinks");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+            document.getElementById(bname).style.display = "block";
+            evt.currentTarget.className += " active";
+        }
+
+        document.getElementById("defaultOpen").click();
+
+        var btn = document.querySelector(".button");
+        btn.addEventListener("click", add_row);
+
+        function add_row() {
+            readData()
+        }
+
+        function readData() {
+            var addr = {}
+            addr["bid"] = document.querySelector(".bid").value;
+            addr["bname"] = document.querySelector(".bname").value;
+            addr["aname"] = document.querySelector(".aname").value;
+            addre["date"] = document.querySelector(".date").value;
+            console.log(addr.name);
+        }
+    </script>
+</body>
+
+</html>
