@@ -1,0 +1,23 @@
+input.input-medium.search-query {
+    margin-bottom: 10px;
+}
+
+.panel {
+    background: #05093d;
+}
+
+.table-bordered {
+    border: 3px solid #020849;
+}
+
+tr {
+    border: 3px solid #020849;
+}
+
+.btn-primary {
+    background-image: linear-gradient(rgb(46 109 164) 0px, rgb(12 4 59) 100%);
+}
+
+body {
+    background: #eaeaea;
+}
